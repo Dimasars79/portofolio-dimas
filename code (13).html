@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dimas Ahmad Noorsaid | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        .text-emerald { color: #10b981; }
+        .bg-emerald { background-color: #10b981; }
+        .border-emerald { border-color: #10b981; }
+        .nav-link:hover { color: #10b981; transition: color 0.3s; }
+        .nav-link.active { color: #10b981; }
+        section { min-height: 100vh; padding-top: 80px; }
+        
+        /* Custom scroll indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #10b981;
+            z-index: 100;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+<!-- Scroll Progress Indicator -->
+<div id="scroll-progress"></div>
+<!-- Header / Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+<nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<a class="text-xl font-bold tracking-tighter" href="#home">Dimas Ahmad Noorsaid</a>
+<div class="hidden md:flex space-x-8" id="nav-menu">
+<a class="nav-link text-sm font-medium uppercase tracking-widest active" href="#home">Home</a>
+<a class="nav-link text-sm font-medium uppercase tracking-widest" href="#about">About</a>
+<a class="nav-link text-sm font-medium uppercase tracking-widest" href="#work">Work</a>
+</div>
+<!-- Mobile Menu Placeholder -->
+<div class="md:hidden">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</nav>
+</header>
+<main>
+<!-- Home Section -->
+<section class="flex flex-col items-center justify-center text-center px-6" id="home">
+<div class="mb-8 relative">
+<img alt="Dimas Ahmad Noorsaid" class="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBcsdzfalZ2h-djJDCjmS_8KEXZklzQ_yQHNhDJ533frRhdNngVApaMuWyyIgvHNctPmGMyGAqhbf8WvUqSd41dNtMN0MeeXJRJl2ZtHqjJ4-TAXga-sxB-2O08O170-l6Fs5_9d_GpQIlb677jALNCDa-FBkFlRQ-oF4fyDmTzZFXpB5B-_vYwrWF-RvVw7dEZqg-n54pnt6ZvORgUrLEYMJc7CMnla0aLSVosGH6MAJ2FXp2xMxr5mxQLTz3DlBw2jjarqzcQQ"/>
+</div>
+<h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                Computer Engineering Student at <span class="text-emerald">Telkom University</span>
+</h1>
+<p class="max-w-2xl text-lg text-white/60 mb-10">
+                Designing elegant systems and building robust software solutions at the intersection of hardware and human experience.
+            </p>
+<div class="flex flex-col md:flex-row gap-4 w-full max-w-md">
+<a class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-emerald hover:text-white transition-all text-center flex items-center justify-center gap-2" href="#work">
+                    View My Work <span>→</span>
+</a>
+<a class="border border-white/20 px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all text-center" href="mailto:dimasars79@gmail.com">
+                    Get in Touch
+                </a>
+</div>
+<div class="mt-16">
+<p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-6">Focus Areas</p>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-emerald font-medium">Embedded Systems</span>
+<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-emerald font-medium">Full-Stack Dev</span>
+<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-emerald font-medium">UI Design</span>
+<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-emerald font-medium">Machine Learning</span>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="max-w-4xl mx-auto px-6 py-20" id="about">
+<h2 class="text-3xl md:text-5xl font-bold mb-12">Crafting digital systems with <span class="text-emerald">technical precision.</span></h2>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="md:col-span-1">
+<p class="text-xs uppercase tracking-widest text-emerald font-bold mb-4">Summary</p>
+</div>
+<div class="md:col-span-2">
+<p class="text-xl text-white/70 leading-relaxed">
+                        Computer Engineering graduate focused on data-driven solutions and system optimization. Experienced in requirements analysis, business process documentation, and stakeholder collaboration. Strong analytical thinking, communication, and problem-solving skills with the ability to adapt quickly in team environments.
+                    </p>
+</div>
+</div>
+<hr class="my-16 border-white/10"/>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="md:col-span-1">
+<p class="text-xs uppercase tracking-widest text-emerald font-bold mb-4">Skills</p>
+</div>
+<div class="md:col-span-2 grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-bold text-lg mb-4">Technical</h4>
+<ul class="space-y-2 text-white/60">
+<li>• System Analysis &amp; Documentation</li>
+<li>• Basic Programming &amp; SQL</li>
+<li>• Data Processing (Excel)</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Soft Skills</h4>
+<ul class="space-y-2 text-white/60">
+<li>• Time Management &amp; Adaptability</li>
+<li>• Project Management</li>
+<li>• Strategic Planning</li>
+<li>• Fast Learner</li>
+</ul>
+</div>
+</div>
+</div>
+<hr class="my-16 border-white/10"/>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="md:col-span-1">
+<p class="text-xs uppercase tracking-widest text-emerald font-bold mb-4">Education</p>
+</div>
+<div class="md:col-span-2">
+<h3 class="text-2xl font-bold">Telkom University</h3>
+<p class="text-emerald font-medium mb-2">2021 — 2026</p>
+<p class="text-white/60">Computer Engineering student</p>
+</div>
+</div>
+</section>
+<!-- Work Section -->
+<section class="max-w-4xl mx-auto px-6 py-20" id="work">
+<h2 class="text-3xl md:text-5xl font-bold mb-16">Selected <span class="text-emerald">Experience.</span></h2>
+<div class="space-y-20">
+<!-- Experience Item 1 -->
+<div class="group">
+<div class="flex flex-col md:flex-row justify-between mb-4">
+<h3 class="text-2xl font-bold group-hover:text-emerald transition-colors">CNT IT Corporation</h3>
+<p class="text-white/40 font-medium">JULY 2024 - AUG 2024</p>
+</div>
+<p class="text-emerald font-bold uppercase tracking-widest text-sm mb-6">Business Analyst Intern</p>
+<ul class="space-y-3 text-white/60 leading-relaxed">
+<li>• Analyzed business requirements and translated them into structured system documentation.</li>
+<li>• Reviewed existing business processes to identify opportunities for improvement and efficiency.</li>
+<li>• Developed documentation and process models to support system development.</li>
+<li>• Collaborated with stakeholders in requirement gathering and solution validation processes.</li>
+</ul>
+</div>
+<!-- Experience Item 2 -->
+<div class="group">
+<div class="flex flex-col md:flex-row justify-between mb-4">
+<h3 class="text-2xl font-bold group-hover:text-emerald transition-colors">Dyandra Global Edutainment</h3>
+<p class="text-white/40 font-medium">SEPT 2023 - SEPT 2023</p>
+</div>
+<p class="text-emerald font-bold uppercase tracking-widest text-sm mb-6">Event Coordinator</p>
+<ul class="space-y-3 text-white/60 leading-relaxed">
+<li>• Managed guest experience during events by ensuring smooth entry flow and seating arrangements.</li>
+<li>• Handled on-site situations quickly and effectively to maintain service quality.</li>
+<li>• Collaborated with team members in large-scale event operations while maintaining high service standards.</li>
+</ul>
+</div>
+<!-- Project Item -->
+<div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:border-emerald/50 transition-all">
+<h3 class="text-xl font-bold mb-2">IoT-Based Smart Irrigation System</h3>
+<p class="text-white/60 text-sm leading-relaxed">
+                        Developed an automated irrigation system using soil moisture sensors and an IoT platform for real-time monitoring, notifications, and water usage optimization.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Back to top button -->
+<button aria-label="Back to top" class="p-3 bg-emerald text-white rounded-full shadow-lg hover:scale-110 transition-transform active:scale-95" id="back-to-top">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Footer -->
+<footer class="py-20 border-t border-white/10">
+<div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+<h2 class="text-3xl font-bold mb-10">Dimas.</h2>
+<div class="flex space-x-8 mb-12">
+<a class="text-white/60 hover:text-white transition-colors" href="https://linkedin.com/in/dimasars" target="_blank">LinkedIn</a>
+<a class="text-white/60 hover:text-white transition-colors" href="https://github.com/Dimasars79" target="_blank">GitHub</a>
+<a class="text-white/60 hover:text-white transition-colors" href="mailto:dimasars79@gmail.com">Email</a>
+</div>
+<p class="text-white/30 text-xs text-center">
+                © 2024 Dimas Ahmad Noorsaid. Built with precision.
+            </p>
+</div>
+</footer>
+<script>
+        /**
+         * Portfolio Interactivity Module
+         * Encapsulated functionality for navigation and scroll effects
+         */
+        const PortfolioApp = (() => {
+            // "Type-safe" constant definitions
+            const SELECTORS = {
+                NAV_LINKS: '.nav-link',
+                SECTIONS: 'section',
+                SCROLL_PROGRESS: '#scroll-progress',
+                BACK_TO_TOP: '#back-to-top'
+            };
+
+            const CLASSES = {
+                ACTIVE: 'active',
+                VISIBLE: 'visible'
+            };
+
+            /**
+             * Initialize Intersection Observer for highlighting nav links
+             */
+            const initScrollSpy = () => {
+                const sections = document.querySelectorAll(SELECTORS.SECTIONS);
+                const navLinks = document.querySelectorAll(SELECTORS.NAV_LINKS);
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-20% 0px -70% 0px', // Trigger when section is in middle of viewport
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            navLinks.forEach(link => {
+                                link.classList.toggle(CLASSES.ACTIVE, link.getAttribute('href') === `#${id}`);
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => observer.observe(section));
+            };
+
+            /**
+             * Handle smooth scrolling for all internal links
+             */
+            const initSmoothScroll = () => {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            };
+
+            /**
+             * Handle scroll-linked progress and back-to-top visibility
+             */
+            const handleScrollEffects = () => {
+                const progressIndicator = document.querySelector(SELECTORS.SCROLL_PROGRESS);
+                const backToTopBtn = document.querySelector(SELECTORS.BACK_TO_TOP);
+
+                window.addEventListener('scroll', () => {
+                    // Scroll Progress Logic
+                    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = (window.pageYOffset / totalHeight) * 100;
+                    if (progressIndicator) {
+                        progressIndicator.style.width = `${progress}%`;
+                    }
+
+                    // Back to top visibility
+                    if (backToTopBtn) {
+                        if (window.pageYOffset > 500) {
+                            backToTopBtn.classList.add(CLASSES.VISIBLE);
+                        } else {
+                            backToTopBtn.classList.remove(CLASSES.VISIBLE);
+                        }
+                    }
+                });
+
+                // Back to top click handler
+                if (backToTopBtn) {
+                    backToTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            };
+
+            /**
+             * Public Init Function
+             */
+            const init = () => {
+                initScrollSpy();
+                initSmoothScroll();
+                handleScrollEffects();
+                console.log('Portfolio Engine Initialized');
+            };
+
+            return { init };
+        })();
+
+        // Start the application
+        document.addEventListener('DOMContentLoaded', PortfolioApp.init);
+    </script>
+</body></html>

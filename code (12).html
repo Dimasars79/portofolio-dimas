@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dimas Ahmad Noorsaid | Portofolio Computer Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#0b1c30",
+                        "outline": "#76777d",
+                        "primary": "#000000",
+                        "on-surface-variant": "#45464d",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#001a42",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed": "#131b2e",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "tertiary": "#000000",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-bright": "#f7f9fb",
+                        "secondary": "#0058be",
+                        "primary-fixed": "#dae2fd",
+                        "surface-tint": "#565e74",
+                        "on-primary-container": "#7c839b",
+                        "outline-variant": "#c6c6cd",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "surface-container": "#eceef0",
+                        "on-secondary-container": "#fefcff",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#2170e4",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d8e2ff",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "section-gap": "96px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-code": ["JetBrains Mono"],
+                        "body-base": ["Hanken Grotesk"],
+                        "display-xl": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-xl": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .grid-bg {
+            background-image: radial-gradient(circle, #000 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.03;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="fixed inset-0 grid-bg pointer-events-none z-0"></div>
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-gutter h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">D.A.N.</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-caps text-label-caps" href="#">About</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-caps text-label-caps" href="#">Work</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all">
+            Contact
+        </button>
+</header>
+<main class="relative z-10 pt-16">
+<section class="min-h-[85vh] flex flex-col justify-center max-w-container-max mx-auto px-6 md:px-gutter py-12 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8 reveal active">
+<div class="inline-flex items-center gap-3 bg-secondary-container/10 px-4 py-2 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-secondary font-label-code text-label-code">Computer Engineering Student</span>
+</div>
+<h1 class="font-display-xl text-display-xl md:text-display-xl text-headline-lg-mobile md:text-display-xl">
+                        Dimas Ahmad Noorsaid
+                    </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-xl leading-relaxed">
+                        Mahasiswa Teknik Komputer di Universitas Telkom dengan minat dalam analisis bisnis, pengembangan sistem, dan solusi teknologi. Berpengalaman dalam dokumentasi proses dan kolaborasi teknis.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded font-label-caps text-label-caps flex items-center gap-2 hover:bg-primary-container transition-all group">
+                            View My Work
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="border border-outline-variant px-8 py-4 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-all">
+                            Download CV
+                        </button>
+</div>
+<div class="pt-12 grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-outline-variant/30">
+<div>
+<p class="font-label-code text-label-code text-secondary">IPK</p>
+<p class="font-headline-md text-headline-md">2.91 / 4.00</p>
+</div>
+<div>
+<p class="font-label-code text-label-code text-secondary">LOCATION</p>
+<p class="font-headline-md text-headline-md">Jakarta, ID</p>
+</div>
+<div class="hidden md:block">
+<p class="font-label-code text-label-code text-secondary">UNIVERSITY</p>
+<p class="font-headline-md text-headline-md">Telkom Univ</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative reveal active" style="transition-delay: 200ms">
+<div class="relative z-10 rounded-lg overflow-hidden border border-outline-variant bg-surface-container-high aspect-[4/5] shadow-xl">
+<img alt="Dimas Ahmad Noorsaid" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5nyqHpX4kPJQ0aeVh4B5-gYbZtY580Ke1JILu_Jfty6lRJ3CHZxMWjmOi6v_kjRj32nR-5mVVViJqwioHZU2Rpk1ThcHSUQ_pzkd7euWUzdxO_a00-0LhKWdq1JLrKluM2fdNX604xmxOqguROwc-ff9lOjgUo2aP0mX1Ah_W2h9b0pzd3ZaGw0t1E7kJXVOrLwGpvGKF0AgFOEZaKlLaXA83-ZfF-jvA7fwcwXGzeAult_PKfprG9knnu5hYIgFIxhkgnJl52g"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary-container/20 -z-10 rounded-lg border border-secondary/20"></div>
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-container/5 -z-10 rounded-lg border border-primary/5"></div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low py-section-gap border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-6 md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+<div class="space-y-4">
+<span class="font-label-code text-label-code text-secondary uppercase tracking-widest">Selected Works</span>
+<h2 class="font-headline-lg text-headline-lg">Project Terbaru</h2>
+</div>
+<a class="text-secondary font-label-caps text-label-caps flex items-center gap-2 hover:underline" href="#">
+                        Lihat Semua Project
+                        <span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface border border-outline-variant p-1 rounded-lg group cursor-pointer reveal">
+<div class="bg-surface-container-high aspect-video overflow-hidden rounded-md relative">
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-on-primary text-primary px-4 py-2 rounded font-label-caps text-label-caps">Details</span>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A highly detailed close-up of an IoT circuit board with glowing LEDs and copper wiring, representing a smart irrigation system. The scene is shot in a clean laboratory setting with soft focus on a background of green plants. The lighting is precise and technical, reflecting a modern engineering aesthetic with high-key blue and white tones. The mood is innovative and systematic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkIFhZgf4uupYmib99hTXg7tciWQCz0j2W3vL0TimplHCIjr_HxBHhVwCq_pQTTjkBaAbCPl_oYQ6QmQmB7T2Mc6PAli228yznjJ76WGAajtimLCx-GfHBucX6nN1-mzf4pX_aY_UV_LJS3uRB_pajQDKkv2_4iFYdsZZE5waMUCV-KqSWg0V9RoQXy019MW0XkaEClEhibmVeN9NMdAmiiIjcB-Xbn0ksFPPxeRQhqInapNwnwUAJYOEbdt5P_qxXES_9smuGSg"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex gap-2">
+<span class="font-label-code text-[10px] px-2 py-1 bg-secondary-container/10 text-secondary border border-secondary/20 rounded">IoT</span>
+<span class="font-label-code text-[10px] px-2 py-1 bg-secondary-container/10 text-secondary border border-secondary/20 rounded">Real-time</span>
+</div>
+<h3 class="font-headline-md text-headline-md">IoT-Based Smart Irrigation System</h3>
+<p class="font-body-base text-body-base text-on-surface-variant line-clamp-2">Sistem irigasi otomatis berbasis sensor kelembaban tanah dengan monitoring real-time via platform IoT.</p>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant p-1 rounded-lg group cursor-pointer reveal" style="transition-delay: 150ms">
+<div class="bg-surface-container-high aspect-video overflow-hidden rounded-md relative">
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-on-primary text-primary px-4 py-2 rounded font-label-caps text-label-caps">Details</span>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional data analytics dashboard displayed on a high-resolution sleek monitor. The interface features complex graphs, system architecture diagrams, and structured data tables in a minimalist navy and white color scheme. The surrounding environment is a clean, modern corporate office with subtle reflections on the glass desk. The mood is analytical, forward-thinking, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnCTEuy3q364o2Rm612dBTu4F-EwPs8ygIaiAfLPmmPhH-imRgABGoKwN9Z-6LGHssdkQSeNiQGTh0f8rEELSOFHxk3xD2vDVYb-8NekmXuXJL-ovICOEyYQyh0-eYvusvPbgEId4rGKcjzpqiZRX3Dt7DTWT6FGvy6EQ7zPSIka_qTFOzMtUXNJl5_aE_d99sTRnXYsDaY8cod2-kk7qsIqN6naYLo0wYu8svGqWlS43GtX9SRCYZ98nOvFP9HOrRxcBdmGicUA"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex gap-2">
+<span class="font-label-code text-[10px] px-2 py-1 bg-secondary-container/10 text-secondary border border-secondary/20 rounded">Business Analysis</span>
+<span class="font-label-code text-[10px] px-2 py-1 bg-secondary-container/10 text-secondary border border-secondary/20 rounded">System Doc</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Enterprise Requirement Analysis</h3>
+<p class="font-body-base text-body-base text-on-surface-variant line-clamp-2">Dokumentasi sistem terstruktur dan analisis proses bisnis untuk optimalisasi efisiensi korporasi.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap max-w-container-max mx-auto px-6 md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 space-y-6">
+<span class="font-label-code text-label-code text-secondary uppercase tracking-widest">Curriculum Vitae</span>
+<h2 class="font-headline-lg text-headline-lg">Pengalaman &amp; Keahlian</h2>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+                        Membangun jembatan antara konsep perangkat lunak abstrak dan teknik perangkat keras fisik melalui pendekatan sistematis.
+                    </p>
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="px-4 py-2 bg-surface-container border border-outline-variant rounded font-label-code text-label-code">SQL</span>
+<span class="px-4 py-2 bg-surface-container border border-outline-variant rounded font-label-code text-label-code">Python</span>
+<span class="px-4 py-2 bg-surface-container border border-outline-variant rounded font-label-code text-label-code">System Analysis</span>
+<span class="px-4 py-2 bg-surface-container border border-outline-variant rounded font-label-code text-label-code">Microsoft Word</span>
+<span class="px-4 py-2 bg-surface-container border border-outline-variant rounded font-label-code text-label-code">Data Processing</span>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-12">
+<div class="relative pl-8 border-l-2 border-outline-variant/30 reveal">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary border-4 border-surface"></div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md">Business Analyst Intern</h4>
+<span class="font-label-code text-label-code text-secondary">JULY 2024 - AUG 2024</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4">CNT IT Corporation</p>
+<ul class="space-y-2 list-disc list-inside text-on-surface-variant font-body-base">
+<li>Menganalisis kebutuhan bisnis dan menerjemahkannya ke dalam dokumentasi sistem terstruktur.</li>
+<li>Mengembangkan dokumentasi dan model proses untuk mendukung pengembangan sistem.</li>
+<li>Optimasi proses dokumentasi menggunakan Sparx Enterprise Architect.</li>
+</ul>
+</div>
+<div class="relative pl-8 border-l-2 border-outline-variant/30 reveal" style="transition-delay: 100ms">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-surface"></div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md">Event Coordinator</h4>
+<span class="font-label-code text-label-code text-secondary">SEPT 2023 - SEPT 2023</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4">Dyandra Global Edutainment</p>
+<p class="text-on-surface-variant font-body-base">Mengelola pengalaman tamu selama acara dengan memastikan alur masuk yang lancar dan koordinasi tim operasional skala besar.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-primary-container text-on-primary">
+<div class="max-w-container-max mx-auto px-6 md:px-gutter text-center space-y-8">
+<h2 class="font-display-xl text-headline-lg md:text-display-xl text-on-primary">Tertarik Untuk Berkolaborasi?</h2>
+<p class="font-body-base text-body-base text-on-primary-container max-w-2xl mx-auto opacity-80">
+                    Saya selalu terbuka untuk diskusi mengenai pengembangan sistem, analisis bisnis, atau peluang internship di bidang teknik komputer.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6 pt-8">
+<a class="bg-secondary text-on-secondary px-8 py-4 rounded font-label-caps text-label-caps hover:bg-secondary/90 transition-all" href="mailto:dimasars79@gmail.com">
+                        Kirim Email
+                    </a>
+<a class="border border-on-primary/30 text-on-primary px-8 py-4 rounded font-label-caps text-label-caps hover:bg-on-primary/10 transition-all" href="https://linkedin.com/in/dimasars">
+                        LinkedIn Profile
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto py-12 px-6 md:px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-label-code text-label-code text-secondary">D.A.N.</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center md:text-left">© 2024 Dimas Ahmad Noorsaid. Built with precision.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.95)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

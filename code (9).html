@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D.A.N. // KERNEL - Dimas Ahmad Noorsaid Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-error": "#690005",
+                    "secondary-container": "#13ff43",
+                    "surface-dim": "#0b1326",
+                    "surface-container-lowest": "#060e20",
+                    "surface": "#0b1326",
+                    "on-primary-container": "#a5bdff",
+                    "outline": "#8d909e",
+                    "surface-tint": "#b1c5ff",
+                    "surface-container": "#171f33",
+                    "on-background": "#dae2fd",
+                    "surface-container-highest": "#2d3449",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#afbfd9",
+                    "surface-container-low": "#131b2e",
+                    "on-primary": "#002c70",
+                    "outline-variant": "#434653",
+                    "secondary": "#ecffe3",
+                    "surface-variant": "#2d3449",
+                    "on-primary-fixed-variant": "#00419e",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "on-secondary-container": "#007117",
+                    "background": "#0b1326",
+                    "surface-bright": "#31394d",
+                    "on-surface-variant": "#c3c6d5",
+                    "tertiary": "#b7c8e1",
+                    "on-secondary-fixed-variant": "#00530e",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#3e4e63",
+                    "inverse-primary": "#2559bd",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "primary-fixed": "#dae2ff",
+                    "secondary-fixed-dim": "#00e639",
+                    "on-tertiary": "#213145",
+                    "primary": "#b1c5ff",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#dae2fd",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-surface": "#dae2fd",
+                    "on-secondary-fixed": "#002203",
+                    "on-secondary": "#003907",
+                    "primary-container": "#0047ab",
+                    "on-primary-fixed": "#001946",
+                    "inverse-on-surface": "#283044",
+                    "surface-container-high": "#222a3d",
+                    "secondary-fixed": "#72ff70"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "container-max": "1200px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "code-sm": ["JetBrains Mono"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["JetBrains Mono"],
+                    "headline-xl": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            background-image: 
+                linear-gradient(rgba(37, 89, 189, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 89, 189, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: currentColor;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0, 230, 57, 0.3);
+        }
+        .status-led {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .pulse-green {
+            background-color: #00e639;
+            box-shadow: 0 0 8px #00e639;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'opsz' 40;">terminal</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter">D.A.N. // KERNEL</h1>
+</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim font-label-caps text-label-caps py-1" href="#">SYSTEM_ROOT</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps py-1" href="#">CORE_PROJECTS</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps py-1" href="#">REGISTRY</a>
+<button class="ml-4 font-label-caps text-label-caps px-4 py-2 border border-primary text-primary hover:bg-primary/10 transition-all duration-200">MENU</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="mt-24 pb-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin grid md:grid-cols-12 gap-gutter items-center min-h-[70vh]">
+<div class="md:col-span-7 flex flex-col gap-6 order-2 md:order-1">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-secondary-fixed-dim">
+<span class="status-led pulse-green"></span>
+<span>SYSTEM_STATUS: ONLINE</span>
+</div>
+<h2 class="font-headline-xl text-[40px] md:text-headline-xl text-on-surface leading-tight">
+                    SYSTEM_BOOT: <br/>
+<span class="text-primary">DIMAS_AHMAD_NOORSAID</span><span class="terminal-cursor text-secondary-fixed-dim">_</span>
+</h2>
+<p class="text-on-surface-variant max-w-xl font-body-md text-body-md border-l-2 border-outline-variant/30 pl-4 py-2 bg-surface-container-low/50">
+                    Computer Engineering Student at Telkom University. Specialized in low-level systems, hardware-software integration, and distributed computing architectures.
+                </p>
+<div class="grid grid-cols-2 gap-4 max-w-sm mt-4">
+<div class="p-4 border border-outline-variant/20 bg-surface-container">
+<span class="block font-label-caps text-label-caps text-on-surface-variant">IPK_FLOAT</span>
+<span class="block font-headline-lg text-headline-lg text-secondary-fixed-dim">2.91</span>
+</div>
+<div class="p-4 border border-outline-variant/20 bg-surface-container">
+<span class="block font-label-caps text-label-caps text-on-surface-variant">STATUS</span>
+<span class="block font-headline-lg text-headline-lg text-primary">ACTIVE_LEARNER</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 mt-8">
+<button class="px-8 py-4 bg-primary text-on-primary font-label-caps text-label-caps hard-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 uppercase">
+                        EXPLORE_WORK
+                    </button>
+<button class="px-8 py-4 border border-primary text-primary font-label-caps text-label-caps hover:bg-primary/10 transition-all duration-200 uppercase">
+                        DOWNLOAD_CV
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 order-1 md:order-2 flex justify-center">
+<div class="relative w-full max-w-md aspect-[0.67] border border-outline-variant/20 p-2 bg-surface-container-low">
+<div class="absolute -top-4 -right-4 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-[10px] z-10">
+                        UID: 5F753E9
+                    </div>
+<img alt="Professional Portrait" class="w-full h-full object-cover grayscale contrast-125 opacity-80 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn9hCsUR7w6Pb9LMhbRHA1clxfpbHHAlUxtolHkWQeb9-unbxvV2JVjV2auufBQqYHNIocUHDU05_VsHgrwFLw632vMCZGkEKA2Bj6DewPSeQIMZ4Bc28fDt8GM7WXk9YcEGCkIvd9i3B2cxLqb7UJwKEp0k_sVihT4rRrmyDd9V9kEfkVm-DIS1nOPaonNXX9cWb8tyto3auYlbEZ83sWQzgnQj9Pq6wZmfZPGhnpMeUFnkNTB1a1s8fbsVMj1hDXao2zPPRXyA"/>
+<div class="absolute inset-0 pointer-events-none border border-primary/20 scale-[0.98]"></div>
+<div class="absolute bottom-4 left-4 font-code-sm text-code-sm text-primary/60">
+                        IMAGE_5.png // RESOLUTION: 1029x1528
+                    </div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Projects Section -->
+<section class="max-w-container-max mx-auto px-margin mt-32">
+<div class="flex items-center justify-between mb-12 border-b border-outline-variant/20 pb-4">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">CORE_PROJECTS<span class="text-primary">:</span></h3>
+<span class="font-code-sm text-code-sm text-on-surface-variant opacity-50">VIEW_ALL(12)</span>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Large Project Card -->
+<div class="md:col-span-2 group relative border border-outline-variant/20 bg-surface-container overflow-hidden">
+<div class="p-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-high">
+<div class="flex gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+<span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+<span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+</div>
+<span class="font-code-sm text-code-sm text-on-tertiary-container">IOT_SMART_IRRIGATION.v2</span>
+</div>
+<div class="grid md:grid-cols-2 min-h-[400px]">
+<div class="p-8 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-4">IoT Smart Irrigation System</h4>
+<p class="text-on-surface-variant font-body-md mb-6 leading-relaxed">
+                                    A distributed sensor network utilizing ESP32 microcontrollers and LoRaWAN protocol for automated crop monitoring. Real-time telemetry visualized via custom dashboard.
+                                </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 border border-outline-variant/40 font-code-sm text-code-sm text-on-surface-variant hover:border-secondary-fixed-dim transition-colors cursor-default">C++</span>
+<span class="px-2 py-1 border border-outline-variant/40 font-code-sm text-code-sm text-on-surface-variant hover:border-secondary-fixed-dim transition-colors cursor-default">MQTT</span>
+<span class="px-2 py-1 border border-outline-variant/40 font-code-sm text-code-sm text-on-surface-variant hover:border-secondary-fixed-dim transition-colors cursor-default">DOCKER</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary-fixed-dim group-hover:gap-4 transition-all duration-300" href="#">
+                                INITIALIZE_SOURCE_VIEW <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="relative h-full overflow-hidden bg-surface-container-low">
+<img alt="Smart Irrigation Hardware" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9BhZ7b5cXUmPUYx8zZS3zfgi1knCZBLAi0GXYijmfNYf1_gvga8DJIsP5NXljskxjfG8_KulebC0wS0i0Nkp_9L6B0VaWH4zsD27N5iAZWwBk4H1JVsoasE7vi7pDtqWOdPB4CZSWprD3oGbzJ021VkJyJz6TKfmhjKheqJyg-v8L9tOkRhXbJzpMfp5RAmnUT47Png_RLOVTT8j4kbiv6HycElbdI5wSehnZauAoSGc5aooYERfWfWgsJJsgQ486l5syj9USFQ"/>
+<div class="absolute inset-0 bg-gradient-to-l from-surface-container to-transparent md:block hidden"></div>
+</div>
+</div>
+</div>
+<!-- Small Project Card 1 -->
+<div class="border border-outline-variant/20 bg-surface-container group hover:border-primary/50 transition-colors duration-300">
+<div class="p-4 border-b border-outline-variant/20 flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span class="font-code-sm text-code-sm">KERNEL_SCHEDULER</span>
+</div>
+<div class="p-6">
+<p class="font-body-md text-on-surface-variant mb-6 h-24 overflow-hidden">
+                            Implementation of a Round-Robin CPU scheduler in C, optimizing process allocation for low-resource environments.
+                        </p>
+<div class="flex justify-between items-end">
+<div class="font-code-sm text-code-sm text-tertiary-fixed-dim">LANG: C89</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">code_off</span>
+</div>
+</div>
+</div>
+<!-- Small Project Card 2 -->
+<div class="border border-outline-variant/20 bg-surface-container group hover:border-primary/50 transition-colors duration-300">
+<div class="p-4 border-b border-outline-variant/20 flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+<span class="font-code-sm text-code-sm">FPGA_ALU_DESIGN</span>
+</div>
+<div class="p-6">
+<p class="font-body-md text-on-surface-variant mb-6 h-24 overflow-hidden">
+                            Verilog implementation of an 8-bit Arithmetic Logic Unit with custom instruction set and hardware-level validation.
+                        </p>
+<div class="flex justify-between items-end">
+<div class="font-code-sm text-code-sm text-tertiary-fixed-dim">LANG: VERILOG</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">location_chip</span>
+</div>
+</div>
+</div>
+<!-- Small Project Card 3 -->
+<div class="border border-outline-variant/20 bg-surface-container group hover:border-primary/50 transition-colors duration-300">
+<div class="p-4 border-b border-outline-variant/20 flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="font-code-sm text-code-sm">SHELL_UTILITIES</span>
+</div>
+<div class="p-6">
+<p class="font-body-md text-on-surface-variant mb-6 h-24 overflow-hidden">
+                            A collection of Bash scripts for automated server deployment and monitoring using Prometheus exporters.
+                        </p>
+<div class="flex justify-between items-end">
+<div class="font-code-sm text-code-sm text-tertiary-fixed-dim">LANG: BASH</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">settings_ethernet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skill Registry -->
+<section class="max-w-container-max mx-auto px-margin mt-32">
+<div class="bg-surface-container-low border border-outline-variant/20 p-8">
+<div class="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">SKILL_REGISTRY:</span>
+<div class="h-[2px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">LANGUAGES</span>
+<ul class="font-code-sm text-code-sm text-on-surface-variant space-y-1">
+<li>&gt; C / C++</li>
+<li>&gt; Python</li>
+<li>&gt; Assembly (x86)</li>
+<li>&gt; JavaScript</li>
+</ul>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">HARDWARE</span>
+<ul class="font-code-sm text-code-sm text-on-surface-variant space-y-1">
+<li>&gt; ESP32 / Arduino</li>
+<li>&gt; FPGA / Verilog</li>
+<li>&gt; PCB Design</li>
+<li>&gt; Sensors / Actuators</li>
+</ul>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">DEV_TOOLS</span>
+<ul class="font-code-sm text-code-sm text-on-surface-variant space-y-1">
+<li>&gt; Git / GitHub</li>
+<li>&gt; Linux Shell</li>
+<li>&gt; Docker</li>
+<li>&gt; VS Code / Vim</li>
+</ul>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">INFRA</span>
+<ul class="font-code-sm text-code-sm text-on-surface-variant space-y-1">
+<li>&gt; MQTT / CoAP</li>
+<li>&gt; HTTP / REST</li>
+<li>&gt; LoRaWAN</li>
+<li>&gt; Networking</li>
+</ul>
+</div>
+<div class="col-span-2 flex flex-col justify-end items-end">
+<div class="text-right">
+<span class="block font-headline-xl text-primary/10 select-none">SYSTEM</span>
+<span class="block font-headline-xl text-primary/10 -mt-8 select-none">ARCHITECT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-gutter max-w-container-max mx-auto gap-4">
+<div class="font-code-sm text-code-sm text-secondary">
+                © 2024 SYSTEM_ID: DIMAS_AHMAD_NOORSAID. ALL_RIGHTS_RESERVED.
+            </div>
+<div class="flex gap-gutter">
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-colors duration-200" href="#">GITHUB</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-colors duration-200" href="#">LINKEDIN</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-colors duration-200" href="#">SOURCE_CODE</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple console-like interaction for atmospheric effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.terminal-cursor');
+            if (cursor) {
+                // Subtle flicker based on mouse position for atmospheric tension
+                if (Math.random() > 0.98) {
+                    cursor.style.opacity = '0.5';
+                    setTimeout(() => cursor.style.opacity = '1', 50);
+                }
+            }
+        });
+
+        console.log("%c [SYSTEM]: D.A.N. // KERNEL INITIALIZED ", "background: #002203; color: #72ff70; font-weight: bold;");
+        console.log("%c [STATUS]: USER ACTIVE_LEARNER LOGGED IN ", "color: #b1c5ff;");
+    </script>
+</body></html>

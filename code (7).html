@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D.A.N. // KERNEL - Work &amp; Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0b1326;
+            background-image: 
+                linear-gradient(rgba(37, 89, 189, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 89, 189, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: currentColor;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .hardware-module {
+            position: relative;
+            overflow: hidden;
+        }
+        .hardware-module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #13ff43, transparent);
+            opacity: 0.5;
+        }
+        .git-branch-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #434653;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-error": "#690005",
+                      "secondary-container": "#13ff43",
+                      "surface-dim": "#0b1326",
+                      "surface-container-lowest": "#060e20",
+                      "surface": "#0b1326",
+                      "on-primary-container": "#a5bdff",
+                      "outline": "#8d909e",
+                      "surface-tint": "#b1c5ff",
+                      "surface-container": "#171f33",
+                      "on-background": "#dae2fd",
+                      "surface-container-highest": "#2d3449",
+                      "error": "#ffb4ab",
+                      "on-tertiary-container": "#afbfd9",
+                      "surface-container-low": "#131b2e",
+                      "on-primary": "#002c70",
+                      "outline-variant": "#434653",
+                      "secondary": "#ecffe3",
+                      "surface-variant": "#2d3449",
+                      "on-primary-fixed-variant": "#00419e",
+                      "primary-fixed-dim": "#b1c5ff",
+                      "on-secondary-container": "#007117",
+                      "background": "#0b1326",
+                      "surface-bright": "#31394d",
+                      "on-surface-variant": "#c3c6d5",
+                      "tertiary": "#b7c8e1",
+                      "on-secondary-fixed-variant": "#00530e",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#3e4e63",
+                      "inverse-primary": "#2559bd",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "primary-fixed": "#dae2ff",
+                      "secondary-fixed-dim": "#00e639",
+                      "on-tertiary": "#213145",
+                      "primary": "#b1c5ff",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#dae2fd",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "on-surface": "#dae2fd",
+                      "on-secondary-fixed": "#002203",
+                      "on-secondary": "#003907",
+                      "primary-container": "#0047ab",
+                      "on-primary-fixed": "#001946",
+                      "inverse-on-surface": "#283044",
+                      "surface-container-high": "#222a3d",
+                      "secondary-fixed": "#72ff70"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1200px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "code-sm": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["JetBrains Mono"],
+                      "headline-xl": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter">D.A.N. // KERNEL</span>
+</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">HOME</a>
+<a class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim transition-colors duration-200" href="#">WORK_PROJECTS</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">STACK</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-label-caps text-primary border border-primary px-2 py-1">v2.0.4-LTS</span>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 px-margin max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<h1 class="font-headline-xl text-headline-xl mb-4 text-primary">
+                EXECUTING: FETCH_EXPERIENCE<span class="terminal-cursor"></span>
+</h1>
+<p class="max-w-2xl text-on-surface-variant">
+                Compiling professional history and technical implementations. A log of roles executed and systems deployed by Dimas Ahmad Noorsaid.
+            </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Work History: Git Log Style -->
+<div class="lg:col-span-7">
+<div class="mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="history">history</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">WORK_HISTORY</h2>
+</div>
+<div class="space-y-12 relative pl-12">
+<div class="git-branch-line"></div>
+<!-- Entry 1 -->
+<div class="relative">
+<div class="absolute -left-14 top-1 w-6 h-6 rounded-full bg-surface border-2 border-secondary-fixed-dim flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></div>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 p-6 rounded-lg hardware-module">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+<div>
+<div class="font-code-sm text-secondary-fixed-dim mb-1">commit c0ffe3_cnt_it</div>
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Business Analyst Intern</h3>
+<p class="font-label-caps text-label-caps text-tertiary">CNT IT CORPORATION</p>
+</div>
+<div class="text-right">
+<span class="font-code-sm px-2 py-1 bg-tertiary-container text-on-tertiary-container rounded">JUL 2024 - AUG 2024</span>
+</div>
+</div>
+<ul class="space-y-2 font-code-sm text-on-surface-variant">
+<li class="flex gap-2 items-start">
+<span class="text-secondary-fixed-dim">$</span>
+<span>Conducted comprehensive requirements analysis for upcoming enterprise systems.</span>
+</li>
+<li class="flex gap-2 items-start">
+<span class="text-secondary-fixed-dim">$</span>
+<span>Developed technical system documentation using Sparx Enterprise Architect.</span>
+</li>
+<li class="flex gap-2 items-start">
+<span class="text-secondary-fixed-dim">$</span>
+<span>Collaborated with cross-functional teams to align software architecture with business goals.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="relative">
+<div class="absolute -left-14 top-1 w-6 h-6 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div class="bg-surface-container border border-outline-variant/20 p-6 rounded-lg hardware-module">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+<div>
+<div class="font-code-sm text-outline mb-1">commit b0042d_dyandra</div>
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Event Coordinator</h3>
+<p class="font-label-caps text-label-caps text-tertiary">DYANDRA GLOBAL EDUTAINMENT</p>
+</div>
+<div class="text-right">
+<span class="font-code-sm px-2 py-1 bg-tertiary-container text-on-tertiary-container rounded">SEPT 2023</span>
+</div>
+</div>
+<ul class="space-y-2 font-code-sm text-on-surface-variant">
+<li class="flex gap-2 items-start">
+<span class="text-outline">&gt;</span>
+<span>Coordinated technical logistics and vendor management for large-scale edutainment events.</span>
+</li>
+<li class="flex gap-2 items-start">
+<span class="text-outline">&gt;</span>
+<span>Managed on-site operations and workflow optimization during live production cycles.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Repository: Hardware Module Cards -->
+<div class="lg:col-span-5">
+<div class="mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="folder_zip">folder_zip</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">PROJECT_REPOSITORY</h2>
+</div>
+<div class="space-y-6">
+<!-- Project 1 -->
+<div class="bg-surface-container-high border border-primary/30 p-1 rounded-lg">
+<div class="bg-surface-dim p-4 rounded-md border border-outline-variant/20">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></div>
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-2">IoT Smart Irrigation</h3>
+<p class="font-code-sm text-on-surface-variant mb-6">
+                                Precision agricultural system utilizing ESP32 microcontrollers for automated hydration management.
+                            </p>
+<div class="grid grid-cols-2 gap-2 mb-6">
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant/10">
+<p class="font-label-caps text-[10px] text-tertiary">SENSORS</p>
+<p class="font-code-sm">SOIL_MOIST_V2</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant/10">
+<p class="font-label-caps text-[10px] text-tertiary">UPTIME</p>
+<p class="font-code-sm">99.9%_REALTIME</p>
+</div>
+</div>
+<img alt="Smart Irrigation System" class="w-full h-40 object-cover rounded mb-6 grayscale hover:grayscale-0 transition-all duration-500 border border-outline-variant/20" data-alt="A sophisticated macro photograph of a custom-built IoT circuit board with soil moisture sensors and wiring, set against a dark, technical workspace. The lighting is low-key with a subtle terminal green glow from the LEDs on the board, echoing a modern engineering aesthetic. The composition is precise and organized, showcasing the technical components and microcontrollers with a focus on hardware engineering and systematic design. Deep blues and vibrant greens dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiNUu_sknqgFJs_KYZwxWD0lAWjIzpcDwmwGd4iT04RBvp7lqfEbWyQ8aUYT2cSXuVQ7Mz9q60F2ey2TnbEc5X0daaxw03GLqUHQv_PUhXYo88sbYSUwnwDRB5Axl5zZEWjY1bwIhopCEzrSYFHYH7BXQV_4uh4f6W43YBAZowUD6u7p9J3i5M17mHVuMGsmEzgn0KTTLeimwgydEvwUF1WrM9XB_elhm7G_Nekq6zp3Ce_HD5Ip8K4F9KU5HyysT1eaPYc1mbw"/>
+<div class="flex gap-2">
+<span class="text-xs font-code-sm border border-outline-variant px-2 py-0.5 rounded">C++</span>
+<span class="text-xs font-code-sm border border-outline-variant px-2 py-0.5 rounded">MQTT</span>
+<span class="text-xs font-code-sm border border-outline-variant px-2 py-0.5 rounded">DASHBOARD</span>
+</div>
+</div>
+</div>
+<!-- Terminal Prompt Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-6 font-code-sm rounded-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center gap-2 mb-4 opacity-50">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+</div>
+<p class="text-secondary-fixed-dim">dimas@kernel:~$ list --projects</p>
+<p class="text-on-surface-variant mt-2">[INFO] Scanning local repository...</p>
+<p class="text-on-surface-variant">[INFO] Found 3 pending deployments.</p>
+<p class="text-on-surface-variant">[INFO] Awaiting user input for project_details_v2.</p>
+<div class="mt-4 flex gap-4">
+<button class="bg-primary text-on-primary px-4 py-1 font-bold hover:opacity-80 transition-opacity">REQUEST_INFO</button>
+<button class="border border-primary text-primary px-4 py-1 hover:bg-primary/10 transition-colors">BACKDOOR_ACCESS</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-gutter max-w-container-max mx-auto gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-code-sm text-code-sm text-secondary">SYSTEM_ID: DIMAS_AHMAD_NOORSAID</span>
+<span class="font-code-sm text-code-sm text-tertiary">© 2024 ALL_RIGHTS_RESERVED.</span>
+</div>
+<div class="flex gap-gutter">
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">GITHUB</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">LINKEDIN</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">SOURCE_CODE</a>
+</div>
+<div class="flex items-center gap-2 text-tertiary/50">
+<span class="font-label-caps text-[10px]">ENCRYPTION_ACTIVE</span>
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover effects on cards
+        document.querySelectorAll('.hardware-module').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.boxShadow = '2px 2px 0px 0px #2559bd';
+                card.style.transition = 'all 0.2s ease-out';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+
+        // Typing effect for the hero subtitle if needed
+        const subtitle = document.querySelector('h1 span.terminal-cursor');
+        // Simple logic to keep it blinking
+    </script>
+</body></html>

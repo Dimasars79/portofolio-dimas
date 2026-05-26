@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "secondary-fixed": "#e1e0ff",
+                    "on-surface-variant": "#c6c6c6",
+                    "primary": "#ffffff",
+                    "tertiary-container": "#1b1b1b",
+                    "primary-container": "#1b1b1b",
+                    "tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#0a0a0a",
+                    "on-tertiary-container": "#848484",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "success-accent": "#10B981",
+                    "on-primary": "#000000",
+                    "surface": "#121212",
+                    "secondary": "#4648d4",
+                    "on-primary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#191c1d",
+                    "on-error-container": "#93000a",
+                    "surface-border": "#262626",
+                    "surface-container-high": "#1e1e1e",
+                    "on-secondary-fixed": "#07006c",
+                    "on-primary-container": "#848484",
+                    "outline": "#7e7576",
+                    "inverse-surface": "#f8f9fa",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "outline-variant": "#cfc4c5",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-tint": "#5e5e5e",
+                    "surface-bright": "#1e1e1e",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-dim": "#121212",
+                    "text-muted": "#94a3b8",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "surface-variant": "#262626",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container": "#1a1a1a",
+                    "on-primary-fixed": "#1b1b1b",
+                    "error": "#ba1a1a",
+                    "background": "#0a0a0a",
+                    "surface-container-low": "#141414",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary": "#000000",
+                    "surface-container-highest": "#262626",
+                    "on-background": "#f8f9fa",
+                    "on-surface": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "720px",
+                    "section-gap": "5rem",
+                    "gutter": "1rem",
+                    "element-gap": "1.5rem",
+                    "margin-page": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "display": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "display-mobile": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "display-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .section-fade {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-surface-border">
+<nav class="flex justify-between items-center w-full max-w-container-max mx-auto px-gutter py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Dimas Ahmad Noorsaid</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex gap-4 items-center">
+<a class="text-text-muted hover:text-primary transition-colors duration-200" href="http://linkedin.com/in/dimasars" target="_blank">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200" href="https://github.com/Dimasars79" target="_blank">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</a>
+</div>
+<div class="flex gap-4">
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Work</a>
+<a class="text-text-muted font-medium font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">About</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="w-full max-w-container-max mx-auto px-gutter pt-32 pb-section-gap">
+<!-- Hero / Intro -->
+<section class="section-fade mb-section-gap">
+<h1 class="font-display text-display mb-element-gap text-primary">Crafting functional logic and seamless experiences.</h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-xl">
+                A focus on business analysis, event coordination, and the intersection of hardware and software through IoT initiatives.
+            </p>
+</section>
+<!-- Work Experience -->
+<section class="section-fade mb-section-gap">
+<div class="flex items-center gap-3 mb-element-gap">
+<span class="font-label-md text-label-md tracking-widest text-text-muted uppercase">01 / Experience</span>
+<div class="h-px flex-grow bg-surface-border"></div>
+</div>
+<div class="space-y-12">
+<!-- Role 1 -->
+<div class="group">
+<div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 mb-4">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-primary/80 transition-colors">CNT IT Corporation</h3>
+<span class="font-label-md text-label-md text-text-muted">Business Analyst Intern — Present</span>
+</div>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-none">
+<li class="flex gap-3">
+<span class="text-primary mt-1.5 opacity-50">•</span>
+<span>Analyzing business requirements and translating them into technical specifications for development teams.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-primary mt-1.5 opacity-50">•</span>
+<span>Conducting market research and competitive analysis to identify growth opportunities.</span>
+</li>
+</ul>
+</div>
+<!-- Role 2 -->
+<div class="group">
+<div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 mb-4">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-primary/80 transition-colors">Dyandra Global Edutainment</h3>
+<span class="font-label-md text-label-md text-text-muted">Event Coordinator — 2023</span>
+</div>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-none">
+<li class="flex gap-3">
+<span class="text-primary mt-1.5 opacity-50">•</span>
+<span>Orchestrating logistical operations for large-scale entertainment events and exhibitions.</span>
+</li>
+<li class="flex gap-3">
+<span class="text-primary mt-1.5 opacity-50">•</span>
+<span>Managing vendor relationships and on-site coordination to ensure seamless project execution.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Projects -->
+<section class="section-fade mb-section-gap">
+<div class="flex items-center gap-3 mb-element-gap">
+<span class="font-label-md text-label-md tracking-widest text-text-muted uppercase">02 / Selected Project</span>
+<div class="h-px flex-grow bg-surface-border"></div>
+</div>
+<div class="border border-surface-border p-8 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-2 text-primary">IoT-Based Smart Irrigation System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                            An automated solution designed to optimize water consumption in agriculture. The system utilizes soil moisture sensors and real-time weather data to trigger irrigation schedules, reducing waste and improving crop yield.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-text-muted font-label-sm text-label-sm rounded-lg border border-surface-border">Arduino</span>
+<span class="px-3 py-1 bg-surface-container-highest text-text-muted font-label-sm text-label-sm rounded-lg border border-surface-border">Sensors</span>
+<span class="px-3 py-1 bg-surface-container-highest text-text-muted font-label-sm text-label-sm rounded-lg border border-surface-border">C++</span>
+<span class="px-3 py-1 bg-surface-container-highest text-text-muted font-label-sm text-label-sm rounded-lg border border-surface-border">Mobile Integration</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-surface-border bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-container-max mx-auto px-gutter py-12 gap-6">
+<div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+<span class="font-headline-md text-headline-md text-primary font-bold">Dimas Ahmad Noorsaid</span>
+<p class="font-label-sm text-label-sm text-text-muted">© 2024 Dimas Ahmad Noorsaid. Built with precision.</p>
+</div>
+<div class="flex gap-8 font-label-sm text-label-sm uppercase tracking-widest">
+<a class="text-text-muted hover:text-primary transition-colors duration-200" href="http://linkedin.com/in/dimasars" target="_blank">LinkedIn</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200" href="https://github.com/Dimasars79" target="_blank">GitHub</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200" href="mailto:dimasahmad@example.com">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.6s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body></html>

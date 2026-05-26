@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D.A.N. // KERNEL - About</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-error": "#690005",
+                      "secondary-container": "#13ff43",
+                      "surface-dim": "#0b1326",
+                      "surface-container-lowest": "#060e20",
+                      "surface": "#0b1326",
+                      "on-primary-container": "#a5bdff",
+                      "outline": "#8d909e",
+                      "surface-tint": "#b1c5ff",
+                      "surface-container": "#171f33",
+                      "on-background": "#dae2fd",
+                      "surface-container-highest": "#2d3449",
+                      "error": "#ffb4ab",
+                      "on-tertiary-container": "#afbfd9",
+                      "surface-container-low": "#131b2e",
+                      "on-primary": "#002c70",
+                      "outline-variant": "#434653",
+                      "secondary": "#ecffe3",
+                      "surface-variant": "#2d3449",
+                      "on-primary-fixed-variant": "#00419e",
+                      "primary-fixed-dim": "#b1c5ff",
+                      "on-secondary-container": "#007117",
+                      "background": "#0b1326",
+                      "surface-bright": "#31394d",
+                      "on-surface-variant": "#c3c6d5",
+                      "tertiary": "#b7c8e1",
+                      "on-secondary-fixed-variant": "#00530e",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#3e4e63",
+                      "inverse-primary": "#2559bd",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "primary-fixed": "#dae2ff",
+                      "secondary-fixed-dim": "#00e639",
+                      "on-tertiary": "#213145",
+                      "primary": "#b1c5ff",
+                      "error-container": "#93000a",
+                      "inverse-surface": "#dae2fd",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "on-surface": "#dae2fd",
+                      "on-secondary-fixed": "#002203",
+                      "on-secondary": "#003907",
+                      "primary-container": "#0047ab",
+                      "on-primary-fixed": "#001946",
+                      "inverse-on-surface": "#283044",
+                      "surface-container-high": "#222a3d",
+                      "secondary-fixed": "#72ff70"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1200px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "code-sm": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["JetBrains Mono"],
+                      "headline-xl": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            background-image: 
+                linear-gradient(rgba(30, 41, 59, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 41, 59, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blinking-cursor::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .brutal-border {
+            border: 1px solid rgba(177, 197, 255, 0.2);
+        }
+        .led-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.1); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter">D.A.N. // KERNEL</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">DASHBOARD</a>
+<a class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim font-label-caps text-label-caps" href="#">ABOUT_USER</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">REPOSITORIES</a>
+<button class="bg-primary text-on-primary px-4 py-2 font-label-caps text-label-caps hover:opacity-80 transition-opacity">MENU</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-16 px-margin max-w-container-max mx-auto w-full">
+<!-- Hero Section / System Specs Identity -->
+<section class="mb-16 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-3 h-3 bg-secondary-fixed-dim rounded-full led-pulse"></div>
+<span class="font-code-sm text-code-sm text-secondary-fixed-dim">SYSTEM_STATUS: ACTIVE</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl mb-6 text-primary blinking-cursor">ENGINEER_PROFILE: DIMAS_AHMAD_NOORSAID</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                    Undergraduate Computer Engineering student specializing in technical systems orchestration, hardware-software integration, and business-centric logic solutions. Currently operating at the intersection of Business Analysis and IoT engineering.
+                </p>
+</div>
+<div class="md:col-span-4 relative group">
+<div class="absolute -inset-1 bg-primary/20 blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative brutal-border aspect-square overflow-hidden bg-surface-container">
+<img alt="Dimas Ahmad Noorsaid" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A cinematic close-up portrait of a young male computer engineer in a dark technical workspace. The lighting is dominated by cool blue terminal screens reflecting off his glasses, creating a high-tech and focused atmosphere. The background features blurred racks of server hardware and glowing LED indicators. The overall mood is serious, professional, and deeply rooted in a modern engineering aesthetic with a dark navy and terminal green color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAZuk9-J6en0bjH1n8LWH-WDsGmhwuhHrOeh3OA6Y090rqTJCeohZm8WtRxxOFyf9uJZrAZq148zvuthDwGeS407n7eTpcMIo-cXCPoVdtqSchxoiVSb96udnzasLBG7NkqIFQIi_-qH_xfMkGuXI3zaXgFOZj2k14Y7_YAhX7DMLiF6CSHKuoU_9c2iFiFfJwt57bW4TbzaUfP9MHSl3IOoJdBjUQo0O8qqJKGk-Eoq-HRzglHECEpV7qKHWpJsn-KW7lmJZ6JQ"/>
+<div class="absolute top-0 left-0 p-2 bg-primary/80">
+<span class="text-[10px] font-bold text-on-primary font-code-sm">ID: 2021-001</span>
+</div>
+</div>
+</div>
+</section>
+<!-- System Architecture / Professional Summary (Bento Grid) -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary whitespace-nowrap">SYSTEM_ARCHITECTURE</h2>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Education Block -->
+<div class="brutal-border p-6 bg-surface-container-low flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="school">school</span>
+<span class="font-code-sm text-code-sm text-outline">v2021-2026</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">EDUCATION_LOG</h3>
+<div class="mt-auto">
+<p class="font-bold text-primary font-code-sm">Telkom University</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-1">B.Eng in Computer Engineering</p>
+</div>
+</div>
+<!-- Professional Summary Block -->
+<div class="md:col-span-2 brutal-border p-8 bg-surface-container flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[80px]" data-icon="settings_ethernet">settings_ethernet</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile text-secondary-fixed-dim mb-6">EXECUTION_SUMMARY</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 relative z-10">
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="text-secondary-fixed-dim font-bold font-code-sm">&gt;</span>
+<p class="font-code-sm text-code-sm">SYSTEMS: Specialist in business analysis and structured documentation for complex enterprise infrastructures.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-secondary-fixed-dim font-bold font-code-sm">&gt;</span>
+<p class="font-code-sm text-code-sm">DEVELOPMENT: Designing robust system architectures and end-to-end software lifecycles.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="text-secondary-fixed-dim font-bold font-code-sm">&gt;</span>
+<p class="font-code-sm text-code-sm">HARDWARE: Implementing IoT solutions with a focus on real-time data acquisition and hardware-level stability.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-secondary-fixed-dim font-bold font-code-sm">&gt;</span>
+<p class="font-code-sm text-code-sm">STRATEGY: Aligning technical capabilities with business objectives to maximize operational efficiency.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skill Matrices (Technical Specs) -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary whitespace-nowrap">SKILL_MATRICES</h2>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Technical Column -->
+<div class="space-y-4">
+<div class="flex items-center justify-between border-l-4 border-primary px-4 py-1 bg-primary/5">
+<span class="font-label-caps text-label-caps text-primary">TECHNICAL_CORE</span>
+<span class="font-code-sm text-code-sm text-outline">01</span>
+</div>
+<div class="brutal-border p-4 space-y-3">
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">SQL_DATABASE</span>
+<span class="text-primary">[||||||||--]</span>
+</div>
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">PYTHON_ENV</span>
+<span class="text-primary">[||||||----]</span>
+</div>
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">CORE_PROGRAMMING</span>
+<span class="text-primary">[|||||||||-]</span>
+</div>
+</div>
+</div>
+<!-- Systems Column -->
+<div class="space-y-4">
+<div class="flex items-center justify-between border-l-4 border-secondary-fixed-dim px-4 py-1 bg-secondary-fixed-dim/5">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim">SYSTEMS_ANALYSIS</span>
+<span class="font-code-sm text-code-sm text-outline">02</span>
+</div>
+<div class="brutal-border p-4 space-y-3">
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">REQUIREMENTS_DOC</span>
+<span class="text-secondary-fixed-dim">[|||||||||--]</span>
+</div>
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">DATA_MODELING</span>
+<span class="text-secondary-fixed-dim">[||||||||---]</span>
+</div>
+<div class="flex justify-between items-center font-code-sm">
+<span class="text-on-surface">SYSTEM_FLOWS</span>
+<span class="text-secondary-fixed-dim">[||||||||||-]</span>
+</div>
+</div>
+</div>
+<!-- Soft Skills Column -->
+<div class="space-y-4">
+<div class="flex items-center justify-between border-l-4 border-tertiary px-4 py-1 bg-tertiary/5">
+<span class="font-label-caps text-label-caps text-tertiary">KERNEL_LOGIC</span>
+<span class="font-code-sm text-code-sm text-outline">03</span>
+</div>
+<div class="brutal-border p-4 space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-code-sm text-code-sm">COMMUNICATION_PROTOCOL</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-code-sm text-code-sm">PROBLEM_SOLVING_ENGINE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-code-sm text-code-sm">ADAPTIVE_COMPUTING</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Snippet mimicking a code terminal -->
+<section class="relative">
+<div class="bg-surface-container-highest rounded-t-lg p-3 flex items-center gap-2 border-t border-x border-outline-variant/40">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+</div>
+<div class="mx-auto font-code-sm text-xs text-on-surface-variant">about_me.sh — 80x24</div>
+</div>
+<div class="brutal-border bg-surface-container-lowest p-6 font-code-sm text-code-sm text-primary overflow-x-auto">
+<p class="text-on-surface-variant mb-2"># Initializing Dimas Ahmad Noorsaid profile...</p>
+<p><span class="text-secondary-fixed-dim">$</span> whoami</p>
+<p class="text-on-surface mb-4">A Computer Engineering student at Telkom University, bridging the gap between hardware precision and software logic. My goal is to build scalable, high-performance systems that solve real-world operational bottlenecks.</p>
+<p><span class="text-secondary-fixed-dim">$</span> locate "education"</p>
+<p class="text-on-surface mb-4">/root/education/telkom_university/computer_eng_2021_2026.log</p>
+<p><span class="text-secondary-fixed-dim">$</span> ls -la skills/</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+<div class="px-2 py-1 bg-surface-container border border-primary/30 text-primary">drwxr-xr-x sql</div>
+<div class="px-2 py-1 bg-surface-container border border-primary/30 text-primary">drwxr-xr-x python</div>
+<div class="px-2 py-1 bg-surface-container border border-primary/30 text-primary">drwxr-xr-x systems</div>
+<div class="px-2 py-1 bg-surface-container border border-primary/30 text-primary">drwxr-xr-x iot</div>
+</div>
+<p class="mt-4 blinking-cursor"><span class="text-secondary-fixed-dim">$</span> </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-gutter max-w-container-max mx-auto gap-4">
+<div class="flex flex-col gap-1 items-center md:items-start">
+<span class="font-code-sm text-code-sm text-secondary">D.A.N. // PERSISTENT_STORAGE</span>
+<span class="font-code-sm text-code-sm text-tertiary">© 2024 SYSTEM_ID: DIMAS_AHMAD_NOORSAID. ALL_RIGHTS_RESERVED.</span>
+</div>
+<div class="flex gap-6 items-center">
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">GITHUB</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">LINKEDIN</a>
+<a class="font-code-sm text-code-sm text-tertiary hover:text-secondary-fixed hover:underline transition-all" href="#">SOURCE_CODE</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the terminal typing effect
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("System Initialized: D.A.N. // KERNEL v1.0.4");
+        });
+    </script>
+</body></html>
